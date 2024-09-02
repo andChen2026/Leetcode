@@ -12,7 +12,7 @@ class EditDistance:
             for B in range(0, cols):
                 cW1, cW2 = word1[B], word2[A]
                 M[A][B] = self.__getValS(M, A, B) if cW1 == cW2 else self.__getValD(M, A, B)
-        return M[rows][cols]
+        return M[rows-1][cols-1]
 
     def __getValS(self, M: list, A: int, B: int) -> int:
         if A == 0 and B == 0:
